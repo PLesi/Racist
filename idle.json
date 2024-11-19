@@ -1,0 +1,62 @@
+{
+	"textures": [
+		{
+			"image": "idle.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 80,
+				"h": 25
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "car1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 38,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 38,
+						"h": 23
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 38,
+						"h": 23
+					}
+				},
+				{
+					"filename": "car2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 38,
+						"h": 23
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 38,
+						"h": 23
+					},
+					"frame": {
+						"x": 41,
+						"y": 1,
+						"w": 38,
+						"h": 23
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b58441148b58a1c2c0df14a728b48d8a:cf95e1e0f118802b9eb921a8d9284af3:585717d7804995c87573698b70e44cb4$"
+	}
+}
