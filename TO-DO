@@ -1,7 +1,133 @@
 TO-DO LIST:
-    - Cesta
-    - Pohyb
-    - Zvuky
-    - Výběr postavy
-    - Výběr obtížnosti
-    - Výběr mapy
+
+
+FUNKCIONALITA
+    - Pohyb predmetov vzad
+    - Zmena rýchlosti predmetov
+    - Detekcia kolízie
+    - Implementácia gyroskopu
+    - Detekcia zariadenia (má gyroskop?)
+    - Vytvorenie menu
+    - Vytvorenie JSONu
+    - Možnosť pauzy
+    - Pauza na vypnutí hry
+    - Ukladanie pozície do súborov cookies (idk či vravela do cookies ale asi hej)
+        - Uloženie rýchlosti
+        - Uloženie pozície hráča
+        - Uloženie pozície ostatných objektov
+        - Uloženie životov hráča
+        - Uloženie skóre
+        - Uloženie času
+
+SCÉNY:
+
+    MENU
+        - Btn na začatie hry
+        - Btn na vypnutie hry
+        - Btn na vypnutie/zapnutie hudby
+
+    WIN
+        - Btn next lvl
+            - nový random level
+        - Domov
+            - Do menu
+
+    GAME OVER
+        - Btn retry
+            - Nastaviť všetko naspäť na hodnoty toho levelu z JSON
+
+        -Btn rand. level
+            - Rovnaká funkcionalita ako win screen
+        -Domov
+            - Do menu
+
+
+GRAFIKA/HUDBA
+    - Vytvorenie hudby pre menu
+    - Vytvorenie hudby pre gameplay
+    - Vytvorenie hodby pre výhru
+
+    - Loading screen
+
+    - Štartovacia "animácia"
+        - Semafór červena -> oranžova -> zelená
+        - Beep na zmenu farby ?
+        - Autá vyštartujú skôr, ty máš problémy s motorom a potom to fixneš a ideš
+        - animácia pokazeného motora
+
+    - Animácie odbáčania
+
+    - SPODNÉ UI:
+        - Rýchlosť
+        - čas
+        - Skóre (skóre = (Max čas - stratený čas - stratený život * 10) * 1000  )
+        . život
+
+    NEPOTREBNÉ
+        - Zvuky výbuchu  ?
+        - Zvuky auta ?
+
+RESPONZIVITA
+    - Vždy kontrolovať responzivitu obrazov ( až keď nám to bude ako tak fungovať )
+    - Kontrolovať či fungujú kolízie
+
+JSON
+    LEVEL:
+        Objekt hráč:
+            - životy (na základe obtiažnosti lvl sa bude meniť)
+            - Výkon auta (číslo, kt. násobím rýchlosť)
+        Pozadie:
+            - farba pozadia, textúry, atd.
+        Autá:
+            - počet áut
+            - textúry áut ?
+            - rozmiestnenie:
+                - pole X súradníc pre daný počet áut.
+                - pole Y súradníc pre daný počet áut.
+
+
+POSTUP:
+A:
+    -------------ZÁKLADNÁ FUNKČNOSŤ--------------
+    1. FUNKCIONALITA:
+        1.1 Pohyb
+        1.2 Pohyb predmetov
+        1.3 Zmena rýchlosti predmetov
+        1.3 Detekcia kolízie
+        1.4 Zmena hodnoty životu v prípade kolízie
+        1.5 Detekcia gyroskopu
+        1.6 Implementácia gyroskopu
+        1.7 Získavanie hodnôt:
+            1.7.1 Čas
+            1.7.2 Život
+            1.7.3 Rýchlosť
+            1.7.4 Skóre
+
+    ------------------------JSON--------------------
+    2. JSON:
+        2.1 Vytvorenie JSON
+        2.2 Dynamické vytváranie / umiestňovanie predmetov podľa JSON
+            2.2.1 Keď sa načíta predmet -> daj mu funkciu pohybu predmetov
+        2.3 Nastavenie hráčovych parametrov z JSON
+
+
+B:
+    ---------------------GRAFIKA--------------------
+    1. GRAFIKA:
+        1.1 Vytvorenie cesty
+        1.2 Nájdenie pozadia
+        1.3 Spravenie animácie predmetov, hráča (Závisí či už je hotové A.1.2 a A.2.1, A.2.2)
+        1.4 Čokoľvek grafické zo sekcie grafika
+
+    -------------------ZVUK---------------------------
+    2. ZVUK
+        2.1 Zvuk gameplayu
+            2.1.1 Spustenie ho keď zapneme hru
+            2.1.2 Zastavenie ak životy == 0
+        2.2 Zvuk prehry (Závisí či máme game over scénu)
+            2.2.1 Spustenie ak životy == 0
+            2.2.2 Zastavenie ak hráč klikne retry
+
+
+A a B možno robiť nezávisle od toho či je hotové A alebo B,
+pokým je potrebná najaká vec z jednej sekcie aby sa dal spraviť krok z druhej, tak je tam napísané, čo je potrebné
